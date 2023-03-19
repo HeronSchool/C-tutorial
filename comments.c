@@ -8,7 +8,7 @@
                                                             // single line comments
 /* DW programming */
 /* calculate how many hours are in a month */
-                                                            /* multi line comments*/
+                                                            /* multi line comments */
 #include <stdio.h>
 main()
 {
