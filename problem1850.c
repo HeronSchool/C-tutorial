@@ -30,5 +30,5 @@ main()
     for(long i = 0; i < z; i++)
     {
         printf("1");
-    }j
+    }
 }
