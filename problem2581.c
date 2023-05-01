@@ -1,4 +1,5 @@
 // problem 2581
+// problem2581.c
 #include <stdio.h>
 #define N 10000
 main()
