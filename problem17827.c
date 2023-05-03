@@ -30,7 +30,7 @@ main()
   for(i = 0; i < m; i++)
   {
       jump = question[i];
-      if(jump < (n - circle_nodes))
+      if(jump < not_circle_nodes)
         printf("%d\n", key[jump]);
       else
       {
