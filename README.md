@@ -1,6 +1,6 @@
 # C-tutorial
 
-The c code files for C tutorial
+The c code files for C tutorial & bakejoon problem solutions
 
 1) simple message.c
 2) comments.c
