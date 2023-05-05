@@ -1,41 +1,46 @@
 // problem 17827
+// linked list to array
 // 달팽이 리스트
+
 #include <stdio.h>
-#define max 200000
+#define N 200000
+static int key[N+1];
 
-long key[max];
-long question[max];
-
-main()
+int main()
 {
-  long n, m, v;
-  long i, key_value, jump, circle_nodes, circle_times, not_circle_nodes;
-  scanf(" %ld %ld %ld", &n, &m, &v);
+  int n, m, v, k;
+  int i, result;
+  // n : 노드의 개수
+  // m : 질문의 횟수
+  // v : n번 노드가 가리키는 노드 번호
+  // k : 1번 노드부터 k번 이동
+  scanf(" %d %d %d", &n, &m, &v);
 
-  circle_nodes = n - v + 1;
-  not_circle_nodes = n - circle_nodes;
+  int circle_node = n - v + 1;
+  int non_circle_node = n - circle_node;
 
-  for(i = 0; i < n; i++)
+  for(i = 1; i <= n; i++)
   {
-    scanf(" %d", &key_value);
-    key[i] = key_value;
+    scanf(" %d", &key[i]);
   }
 
   for(i = 0; i < m; i++)
   {
-    scanf(" %d", &jump);
-    question[i] = jump;
+    scanf(" %d", &k);
+    // k    : 1 2 ~ 9  10 ~ 17  18 ~ 25
+    // node : 2 3 ~ 10  3  ~ 10  3 ~ 10
+    // k = 1 -> node : 1 + k
+    // k = 2 + (8 cycle) -> 1 + ( ((k-2) % 8) + 2 )
+    if(k < non_circle_node)
+    {
+      result = 1 + k;
+      printf("%d\n", key[result]);
+    }
+    else
+    {
+      result = 1 + non_circle_node + (k - non_circle_node) % circle_node;
+      printf("%d\n", key[result]);
+    }
   }
-
-  for(i = 0; i < m; i++)
-  {
-      jump = question[i];
-      if(jump < not_circle_nodes)
-        printf("%d\n", key[jump]);
-      else
-      {
-        circle_times = (jump - not_circle_nodes) / circle_nodes;
-        printf("%d\n", key[jump - circle_nodes * circle_times]);
-      }
-  }
+  return 0;
 }
