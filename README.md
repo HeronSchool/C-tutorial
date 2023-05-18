@@ -8,3 +8,4 @@ The c code files for C tutorial & bakejoon problem solutions
 4) problem1850.c
 5) problem2581.c
 6) problem17827.c
+7) problem1068.c
