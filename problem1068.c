@@ -64,7 +64,7 @@ main()
       }
     }
 
-    // count leaf nodes (zero childeren)
+    // count leaf nodes (zero children)
     if(subtree_child_count == 0)
     {
       leaf_count++;
