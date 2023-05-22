@@ -3,7 +3,7 @@
 #include <stdio.h>
 #define max 40
 //int F[max];
-int countzero[max+1]; 
+int countzero[max+1]; // 반드시 +1 !!
 int countone[max+1];
 
 void fibonaccicount ()
